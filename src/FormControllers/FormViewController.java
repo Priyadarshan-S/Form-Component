@@ -44,7 +44,7 @@ public class FormViewController {
             String fieldType = obj.getString("fieldType");
             FieldChecks check = new FieldChecks();
             String access;
-            access = check.FieldAuthorize().toString();
+            access = check.FieldAuthorize(obj.getString("title")).toString();
             if(check.RoleCheck(role,obj.getString("role")))
             {
                 switch(fieldType)

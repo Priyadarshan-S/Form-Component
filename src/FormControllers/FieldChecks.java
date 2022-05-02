@@ -11,14 +11,14 @@ public class FieldChecks {
         return hasRole;
     }
 
-    public Enum<?> FieldAuthorize()
+    public Enum<?> FieldAuthorize(String title)
     {
         enum access {
             SHOW,HIDE,DISABLE
         };
 
 
-        return access.DISABLE;
+        return access.SHOW;
     }
 
     public List<?> valueSupplier(List<?> stringList) {
