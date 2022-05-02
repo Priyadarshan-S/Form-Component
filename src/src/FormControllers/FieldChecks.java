@@ -11,6 +11,16 @@ public class FieldChecks {
         return hasRole;
     }
 
+    public Enum<?> FieldAuthorize()
+    {
+        enum access {
+            SHOW,HIDE,DISABLE
+        };
+
+
+        return access.DISABLE;
+    }
+
     public List<?> valueSupplier(List<?> stringList) {
         List<?> authorisedArray = stringList;
 
