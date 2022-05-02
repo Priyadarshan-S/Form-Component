@@ -14,14 +14,14 @@ public class FieldChecks {
     public Enum<?> FieldAuthorize(String title)
     {
         enum access {
-            SHOW,HIDE,DISABLE
+            SHOW,HIDE,DISABLE,DEFAULT
         };
 
         //example condition - Changes Name -> visibility to false
         if(title.equals("Name"))
             return access.HIDE;
 
-        return access.SHOW;
+        return access.DEFAULT;
     }
 
     public List<?> valueSupplier(String title, List<?> stringList) {
