@@ -9,7 +9,7 @@ import FieldViewModels.*;
 import FormControllers.JsonWriter;
 
 public class MultiFldViewController {
-    public String MultiFldJsonGenerator(Config obj, MultiFldModel model) {
+    public String MultiFldJsonGenerator(Config obj, MultiFldModel model,Boolean visibility) {
         model.setTitle(obj.getString("title"));
         String title = model.getTitle();
 
@@ -19,12 +19,6 @@ public class MultiFldViewController {
 
         model.setFieldType(obj.getString("fieldType"));
         String fieldType = model.getFieldType();
-
-        if(obj.hasPath("visibility"))
-            model.setVisibility(obj.getBoolean("visibility"));
-        else 
-            model.setVisibility(true);
-        Boolean visibility = model.getVisibility();
 
         if(obj.hasPath("mandatory"))
             model.setMandatory(obj.getBoolean("mandatory"));
