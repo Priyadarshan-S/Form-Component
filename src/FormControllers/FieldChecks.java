@@ -24,7 +24,7 @@ public class FieldChecks {
         return access.SHOW;
     }
 
-    public List<?> valueSupplier(List<?> stringList) {
+    public List<?> valueSupplier(String title, List<?> stringList) {
         List<?> authorisedArray = stringList;
 
         return authorisedArray;

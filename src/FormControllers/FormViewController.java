@@ -87,7 +87,7 @@ public class FormViewController {
                         {
                             ChoiceFldModel cho = new ChoiceFldModel();
                             new ChoiceFldViewController(obj,cho);
-                            cho.setChoiceArray(check.valueSupplier(cho.getChoiceArray()));
+                            cho.setChoiceArray(check.valueSupplier(cho.getTitle(),cho.getChoiceArray()));
 
                             if(access.equals("SHOW"))
                                 cho.setVisibility(true);
