@@ -17,6 +17,9 @@ public class FieldChecks {
             SHOW,HIDE,DISABLE
         };
 
+        //example condition - Changes Name -> visibility to false
+        if(title.equals("Name"))
+            return access.HIDE;
 
         return access.SHOW;
     }
