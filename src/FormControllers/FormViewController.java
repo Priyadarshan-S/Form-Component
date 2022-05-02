@@ -43,67 +43,144 @@ public class FormViewController {
             Config obj = (Config) it.next();
             String fieldType = obj.getString("fieldType");
             FieldChecks check = new FieldChecks();
+            String access;
+            access = check.FieldAuthorize().toString();
             if(check.RoleCheck(role,obj.getString("role")))
             {
                 switch(fieldType)
                 {
-                    case "Common":
-                        CommonFldModel com = new CommonFldModel();
-                        new CommonFldViewController(obj,com);
-                        if(fieldCount!=0)
-                            jsonString += ",\n";
-                        jsonString = json.toJsonString(jsonString, com);
+                    case "Common": 
+                        if(!(access.equals("DISABLE")))
+                        {
+                            CommonFldModel com = new CommonFldModel();
+                            new CommonFldViewController(obj,com);
+
+                            if(access.equals("SHOW"))
+                                com.setVisibility(true);
+                            else
+                                com.setVisibility(false);
+
+                            if(fieldCount!=0)
+                                jsonString += ",\n";
+
+                            jsonString = json.toJsonString(jsonString, com);
+                        }
                         break;
                     case "Format":
-                        FormattedFldModel format = new FormattedFldModel();
-                        new FormattedFldViewController(obj,format);
-                        if(fieldCount!=0)
-                            jsonString += ",\n";
-                        jsonString = json.toJsonString(jsonString, format);
+                        if(!(access.equals("DISABLE")))
+                        {
+                            FormattedFldModel format = new FormattedFldModel();
+                            new FormattedFldViewController(obj,format);
+
+                            if(access.equals("SHOW"))
+                                format.setVisibility(true);
+                            else
+                                format.setVisibility(false);
+
+                            if(fieldCount!=0)
+                                jsonString += ",\n";
+                            jsonString = json.toJsonString(jsonString, format);
+                        } 
                         break;
                     case "Choice":
-                        ChoiceFldModel cho = new ChoiceFldModel();
-                        new ChoiceFldViewController(obj,cho);
-                        cho.setChoiceArray(check.valueSupplier(cho.getChoiceArray()));
-                        if(fieldCount!=0)
-                            jsonString += ",\n";
-                        jsonString = json.toJsonString(jsonString, cho);
+                        if(!(access.equals("DISABLE")))
+                        {
+                            ChoiceFldModel cho = new ChoiceFldModel();
+                            new ChoiceFldViewController(obj,cho);
+                            cho.setChoiceArray(check.valueSupplier(cho.getChoiceArray()));
+
+                            if(access.equals("SHOW"))
+                                cho.setVisibility(true);
+                            else
+                                cho.setVisibility(false);
+
+                            if(fieldCount!=0)
+                                jsonString += ",\n";
+                            jsonString = json.toJsonString(jsonString, cho);
+                        }
                         break;
                     case "Rate":
-                        RatingFldModel rat = new RatingFldModel();
-                        new RatingFldViewController(obj,rat);
-                        if(fieldCount!=0)
-                            jsonString += ",\n";
-                        jsonString = json.toJsonString(jsonString, rat);
+                        if(!(access.equals("DISABLE")))
+                        {   
+                            RatingFldModel rat = new RatingFldModel();
+                            new RatingFldViewController(obj,rat);
+
+                            if(access.equals("SHOW"))
+                                rat.setVisibility(true);
+                            else
+                                rat.setVisibility(false);
+
+                            if(fieldCount!=0)
+                                jsonString += ",\n";
+                            jsonString = json.toJsonString(jsonString, rat);
+                        }
                         break;
                     case "Upload":
-                        UploadFldModel upl = new UploadFldModel();
-                        new UploadFldViewController(obj,upl);
-                        if(fieldCount!=0)
-                            jsonString += ",\n";
-                        jsonString = json.toJsonString(jsonString, upl);
+                        if(!(access.equals("DISABLE")))
+                        {  
+                            UploadFldModel upl = new UploadFldModel();
+                            new UploadFldViewController(obj,upl);
+
+                            if(access.equals("SHOW"))
+                                upl.setVisibility(true);
+                            else
+                                upl.setVisibility(false);
+
+                            if(fieldCount!=0)
+                                jsonString += ",\n";
+                            jsonString = json.toJsonString(jsonString, upl);
+                        }
                         break;
                     case "Slider":
-                        SliderFldModel sli = new SliderFldModel();
-                        new SliderFldViewController(obj,sli);
-                        if(fieldCount!=0)
-                            jsonString += ",\n";
-                        jsonString = json.toJsonString(jsonString, sli);
+                        if(!(access.equals("DISABLE")))
+                        {  
+                            SliderFldModel sli = new SliderFldModel();
+                            new SliderFldViewController(obj,sli);
+
+                            if(access.equals("SHOW"))
+                                sli.setVisibility(true);
+                            else
+                                sli.setVisibility(false);
+
+                            if(fieldCount!=0)
+                                jsonString += ",\n";
+                            jsonString = json.toJsonString(jsonString, sli);
+                        }
                         break;
                     case "Decision":
-                        DecisionFldModel dec = new DecisionFldModel();
-                        new DecisionFldViewController(obj, dec);
-                        if(fieldCount!=0)
-                            jsonString += ",\n";
-                        jsonString = json.toJsonString(jsonString, dec);
+                        if(!(access.equals("DISABLE")))
+                        {
+                            DecisionFldModel dec = new DecisionFldModel();
+                            new DecisionFldViewController(obj, dec);
+
+                            if(access.equals("SHOW"))
+                                dec.setVisibility(true);
+                            else
+                                dec.setVisibility(false);
+
+                            if(fieldCount!=0)
+                                jsonString += ",\n";
+                            jsonString = json.toJsonString(jsonString, dec);
+                        }
                         break;
                     case "Multi":
-                        MultiFldModel mul = new MultiFldModel();
-                        MultiFldViewController mulControl = new MultiFldViewController();
-                        String multiJsonString = mulControl.MultiFldJsonGenerator(obj,mul);
-                        if(fieldCount!=0)
-                            jsonString += ",\n";
-                        jsonString += multiJsonString;
+                        if(!(access.equals("DISABLE")))
+                        {
+                            MultiFldModel mul = new MultiFldModel();
+                            MultiFldViewController mulControl = new MultiFldViewController();
+
+                            if(access.equals("SHOW"))
+                                mul.setVisibility(true);
+                            else
+                                mul.setVisibility(false);
+
+                            Boolean visibility = mul.getVisibility();
+
+                            String multiJsonString = mulControl.MultiFldJsonGenerator(obj,mul,visibility);
+                            if(fieldCount!=0)
+                                jsonString += ",\n";
+                            jsonString += multiJsonString;
+                        }
                         break;
                 }
                 fieldCount++;
