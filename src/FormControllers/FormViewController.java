@@ -67,6 +67,7 @@ public class FormViewController {
                             jsonString = json.toJsonString(jsonString, com);
                         }
                         break;
+
                     case "Format":
                         if(!(access.equals("DISABLE")))
                         {
@@ -84,6 +85,7 @@ public class FormViewController {
                             jsonString = json.toJsonString(jsonString, format);
                         } 
                         break;
+
                     case "Choice":
                         if(!(access.equals("DISABLE")))
                         {
@@ -102,6 +104,7 @@ public class FormViewController {
                             jsonString = json.toJsonString(jsonString, cho);
                         }
                         break;
+
                     case "Rate":
                         if(!(access.equals("DISABLE")))
                         {   
@@ -119,6 +122,7 @@ public class FormViewController {
                             jsonString = json.toJsonString(jsonString, rat);
                         }
                         break;
+
                     case "Upload":
                         if(!(access.equals("DISABLE")))
                         {  
@@ -136,6 +140,7 @@ public class FormViewController {
                             jsonString = json.toJsonString(jsonString, upl);
                         }
                         break;
+
                     case "Slider":
                         if(!(access.equals("DISABLE")))
                         {  
@@ -153,6 +158,7 @@ public class FormViewController {
                             jsonString = json.toJsonString(jsonString, sli);
                         }
                         break;
+
                     case "Decision":
                         if(!(access.equals("DISABLE")))
                         {
@@ -170,6 +176,7 @@ public class FormViewController {
                             jsonString = json.toJsonString(jsonString, dec);
                         }
                         break;
+                        
                     case "Multi":
                         if(!(access.equals("DISABLE")))
                         {
