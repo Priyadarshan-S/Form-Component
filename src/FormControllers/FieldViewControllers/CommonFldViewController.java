@@ -49,9 +49,4 @@ public class CommonFldViewController {
         else 
             model.setMandatory(false);
     }
-
-    public static void ConstructCommonView(Object view)
-    {
-        
-    }
 }
