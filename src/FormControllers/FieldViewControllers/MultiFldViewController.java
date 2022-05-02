@@ -9,7 +9,7 @@ import FieldViewModels.*;
 import FormControllers.JsonWriter;
 
 public class MultiFldViewController {
-    public String MultiFldJsonGenerator(Config obj, MultiFldModel model,Boolean visibility) {
+    public String MultiFldJsonGenerator(Config obj, MultiFldModel model) {
         model.setTitle(obj.getString("title"));
         String title = model.getTitle();
 
@@ -24,7 +24,9 @@ public class MultiFldViewController {
             model.setMandatory(obj.getBoolean("mandatory"));
         else 
             model.setMandatory(false);
+            
         Boolean mandatory = model.getMandatory();
+        Boolean visibility = model.getVisibility();
 
         String start = "{\n\"title\": \""+title+"\",\n\"instruction\" : \""+instruction+
                         "\"\n\"fieldType\" : \""+fieldType+"\"\n\"visibility\" : \""+visibility+
