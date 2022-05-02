@@ -58,6 +58,7 @@ public class FormViewController {
                             if(access.equals("SHOW"))
                                 com.setVisibility(true);
                             else
+                            if(access.equals("HIDE"))
                                 com.setVisibility(false);
 
                             if(fieldCount!=0)
@@ -75,6 +76,7 @@ public class FormViewController {
                             if(access.equals("SHOW"))
                                 format.setVisibility(true);
                             else
+                            if(access.equals("HIDE"))
                                 format.setVisibility(false);
 
                             if(fieldCount!=0)
@@ -92,6 +94,7 @@ public class FormViewController {
                             if(access.equals("SHOW"))
                                 cho.setVisibility(true);
                             else
+                            if(access.equals("HIDE"))
                                 cho.setVisibility(false);
 
                             if(fieldCount!=0)
@@ -108,6 +111,7 @@ public class FormViewController {
                             if(access.equals("SHOW"))
                                 rat.setVisibility(true);
                             else
+                            if(access.equals("HIDE"))
                                 rat.setVisibility(false);
 
                             if(fieldCount!=0)
@@ -124,6 +128,7 @@ public class FormViewController {
                             if(access.equals("SHOW"))
                                 upl.setVisibility(true);
                             else
+                            if(access.equals("HIDE"))
                                 upl.setVisibility(false);
 
                             if(fieldCount!=0)
@@ -140,6 +145,7 @@ public class FormViewController {
                             if(access.equals("SHOW"))
                                 sli.setVisibility(true);
                             else
+                            if(access.equals("HIDE"))
                                 sli.setVisibility(false);
 
                             if(fieldCount!=0)
@@ -156,6 +162,7 @@ public class FormViewController {
                             if(access.equals("SHOW"))
                                 dec.setVisibility(true);
                             else
+                            if(access.equals("HIDE"))
                                 dec.setVisibility(false);
 
                             if(fieldCount!=0)
@@ -172,6 +179,7 @@ public class FormViewController {
                             if(access.equals("SHOW"))
                                 mul.setVisibility(true);
                             else
+                            if(access.equals("HIDE"))
                                 mul.setVisibility(false);
 
                             String multiJsonString = mulControl.MultiFldJsonGenerator(obj,mul);
