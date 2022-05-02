@@ -174,9 +174,7 @@ public class FormViewController {
                             else
                                 mul.setVisibility(false);
 
-                            Boolean visibility = mul.getVisibility();
-
-                            String multiJsonString = mulControl.MultiFldJsonGenerator(obj,mul,visibility);
+                            String multiJsonString = mulControl.MultiFldJsonGenerator(obj,mul);
                             if(fieldCount!=0)
                                 jsonString += ",\n";
                             jsonString += multiJsonString;
